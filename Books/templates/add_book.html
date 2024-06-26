@@ -1,41 +1,13 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Search</title>
+    <link rel="stylesheet" href="{% static 'style.css' %}">
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #14213d;
-            margin: 0;
-            padding: 20px;
-        }
-        h1 {
-            text-align: center;
-            margin-bottom: 20px;
-            color: #fca311;
-        }
-        form {
-            max-width: 600px;
-            margin: 0 auto;
-            background-color: #e5e5e5;
-            padding: 20px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            border-radius: 5px;
-        }
-        form input[type="submit"] {
-            padding: 10px 20px;
-            background-color: #14213d;
-            color: #fff;
-            border: none;
-            border-radius: 10px;
-            cursor: pointer;
-        }
-        form input[type="submit"]:hover {
-            background-color: #000000;
-            border-radius: 10px;
-        }
+        
         label {
             margin-bottom: 10px;
             display: block;
@@ -44,14 +16,16 @@
             width: 100%;
             padding: 10px;
             margin-bottom: 15px;
-            border: 1px solid #ccc;
-            border-radius: 3px;
+            border: 1px solid #000000;
+            border-radius: 5px;
             box-sizing: border-box;
         }
     </style>
 </head>
 <body>
-    <h1>Add Book to Repository</h1>
+    {% include 'navbar.html' %}
+    <div class="container">
+    <h1 class="heading">Add Book to Repository</h1>
     <br/><br/>
     {% if submitted %}
         <div style="text-align: center; color: green;">
@@ -61,8 +35,9 @@
         <form method="POST" action="" enctype="multipart/form-data">
             {% csrf_token %}
             {{ form.as_p }}
-            <input type="submit" value="Submit">
+            <input type="submit" value="Submit" class = "submit-btn">
         </form>
     {% endif %}
+</div>
 </body>
 </html>

@@ -1,16 +1,10 @@
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0px ;
-    background-color: #000000;
-    box-sizing: border-box;
-}
 .navbar {
     background-color: #fca311;
     padding-top: 15px;
     padding-bottom: 15px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     top: 0;
+    position: fixed;
     width: 100% ;
     z-index: 1000;
 }
@@ -21,8 +15,14 @@ body {
     padding:0 10px;
 }
 .navbar-brand {
+    color: #14213d;
     font-weight: bold;
     font-size: 1.4em;
+    text-decoration: none;
+}
+.navbar-brand:hover {
+    text-decoration: underline;
+    cursor: pointer;
 }
 .navbar-toggler {
     display: none;
@@ -43,21 +43,22 @@ body {
     display: flex;
 }
 .navbar-nav .nav-item {
-    background: #e5e5e5;
+    background: #fca311;
     border:none;
     margin: 10px 10px;
     padding: 10px;
-    border-radius: 5px;
+    border-radius: 10px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     display: flex;
     justify-content: center;
     align-items: center;
     color: #000000;
     cursor: pointer;
+    transition: all 0.3s ease;
 }
 
 .nav-item:hover {
-    background-color: #dedede;
+    background-color: #ffffff;
 }
 
 .navbar-nav .nav-link {
@@ -91,4 +92,163 @@ body {
 
 button:hover {
     transition: all ease;
+}
+
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #000000;
+    margin: 0;
+    padding-top: 80px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-sizing: border-box;
+}
+.container2 {
+    color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: fit-content;
+    margin: 60px auto;
+    padding: 20px;
+    background-color: #14213d;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+}
+.container {
+    color: #ffffff;
+    width: 100%;
+    max-width: 800px;
+    margin: 60px auto;
+    padding: 20px;
+    background-color: #14213d;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    
+}
+.heading {
+    text-align: center;
+    color: #e5e5e5;
+}
+#list{
+    list-style: none;
+    padding: 0;
+}
+.search-result {
+    background: #e5e5e5;
+    margin: 10px 0;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #000000;
+}
+.book_display {
+    text-decoration: none;
+    color: #14213d;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+.book_display:hover {
+    color: #000000;
+}
+.delete_btn {
+    background-color: #fff;
+    border-radius: 5px;
+    height: 30px ;
+    transition: color 0.3s;
+    font-weight: bold;
+}
+.delete_btn:hover {
+    background-color: #d43939;
+    color: #fff;
+    cursor: pointer;
+}
+.submit-btn {
+    padding: 10px 20px;
+    background-color: #fca311;
+    color: #000000;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+.submit-btn:hover {
+    background-color: #e5e5e500;
+    border: #000 solid 2px;
+    color: #ffffff;
+    cursor: pointer;
+}
+.login-container {
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    width: 300px;
+    color: #000; 
+}
+
+.login-container h2 {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.login-container form {
+    display: flex;
+    flex-direction: column;
+}
+
+.login-container label {
+    margin-bottom: 5px;
+}
+
+.login-input {
+    margin-bottom: 15px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+
+.login-btn {
+    padding: 10px;
+    background-color: #fca311;
+    color: #000000;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    width: 100%;
+}
+
+.login-btn:hover {
+    background-color: #e5e5e5;
+    border: #000 solid 2px;
+    color: #000;
+}
+
+.signup-link {
+    color: #e5e5e5;
+    margin-top: 10px;
+    text-align: center;
+}
+
+.signup-link a {
+    color: #fca311;
+}
+
+.signup-link a:hover {
+    text-decoration: underline;
+}
+.messages {
+    background-color: #fca311; 
+    padding: 10px;
+    margin: 10px 0;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+.message {
+    margin-bottom: 5px;
 }

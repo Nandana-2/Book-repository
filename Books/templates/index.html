@@ -1,80 +1,20 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Index Page</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #14213d;
-            margin: 0;
-            padding-top: 80px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            box-sizing: border-box;
-        }
-        .container {
-            color: #ffffff;
-            width: 100%;
-            max-width: 800px;
-            margin: 60px auto;
-            padding: 20px;
-            background-color: #14213d;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            border-radius: 5px;
-        }
-        h1 {
-            text-align: center;
-            color: #e5e5e5;
-        }
-        ul {
-            list-style: none;
-            padding: 0;
-        }
-        li {
-            background: #e5e5e5;
-            margin: 10px 0;
-            padding: 10px;
-            border-radius: 5px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            color: #000000;
-        }
-        a {
-            text-decoration: none;
-            color: #14213d;
-            font-weight: bold;
-            transition: color 0.3s;
-        }
-        a:hover {
-            color: #000000;
-        }
-        .delete_btn {
-            background-color: #fff;
-            border-radius: 5px;
-            height: 30px ;
-            transition: color 0.3s;
-            font-weight: bold;
-        }
-        .delete_btn:hover {
-            background-color: #d43939;
-            color: #fff;
-            cursor: pointer;
-        }
-    </style>
+    <link rel="stylesheet" href="{% static 'style.css' %}">
 </head>
 <body>
     {% include 'navbar.html' %}
     <div class="container">
-        <h1>Welcome to Repository</h1>
-        <ul>
+        <h1 class="heading">Welcome to Repository</h1>
+        <ul id = "list">
             {% for book in book_list %}
-                <li>
-                    <a href="{{ book.pdf.url }}" target="_blank">{{ book.title }}</a>
+                <li class = "search-result">
+                    <a href="{{ book.pdf.url }}" target="_blank" class = "book_display">{{ book.title }}</a>
                     <span>{{ book.date }}</span>
                     {% if request.user.is_superuser %}
                         <form action="{% url 'delete_book' book.id %}" method="POST" style="display: inline;">

@@ -10,7 +10,7 @@ def search(request):
         books = Book.objects.filter(title__contains = searched) 
         return render(request, 'search.html', {'searched' :searched, 'books':books})
     else:
-        return render(request, 'search.html', {'searched' :searched})
+        return render(request, 'search.html', {})
 
 def is_superuser(user):
     return user.is_superuser
