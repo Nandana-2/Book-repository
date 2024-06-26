@@ -14,8 +14,8 @@ def login_user(request):
             return redirect('index')
         else:
             messages.success(request, "There was an error logining in, Try Again... ")
-            pass
-
+            return render(request, 'authenticate/login.html',{})
+            
     else:
         return render(request,'authenticate/login.html', {})
 
