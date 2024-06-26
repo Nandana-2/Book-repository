@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #14213D;
+            margin: 0;
+            padding-top: 80px; 
+        }
+        .container {
+            max-width: 100%;
+            max-height: 100vh;
+            padding: 20px;
+            background-color: #14213D;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+            text-align: center;
+            margin: 0 auto;
+        }
+        h1 {
+            margin-bottom: 20px;
+            color: #e5e5e5;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            margin-bottom: 10px;
+        }
+        .book_display {
+            color: #e5e5e5;
+            text-decoration: none;
+        }
+        .book_display:hover {
+            text-decoration: underline;
+        }
+        .search-result {
+            color: #e5e5e5;
+        }
+    </style>
+</head>
+<body>
+    {% include 'navbar.html' %}
+
+    <div class="container">
+        <h1>Search Results</h1>
+        <br/><br/>
+        {% if searched %}
+            <h2 class="search-result">You searched for "{{ searched }}"</h2>
+            <ul>
+            {% for book in books %}
+                <li class="search-result"><a class="book_display" href="{{ book.pdf.url }}" target="_blank">{{ book.title }}</a> - {{ book.date }}</li>
+            {% empty %}
+                <li class="search-result">No books found.</li>
+            {% endfor %}
+            </ul>
+        {% else %}
+            <h2 class="search-result">Hey! You forgot to search</h2>
+        {% endif %}
+    </div>
+</body>
+</html>
