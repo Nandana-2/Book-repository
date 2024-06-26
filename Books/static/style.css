@@ -1,0 +1,94 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0px ;
+    background-color: #000000;
+    box-sizing: border-box;
+}
+.navbar {
+    background-color: #fca311;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    top: 0;
+    width: 100% ;
+    z-index: 1000;
+}
+.navbar .container-fluid {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding:0 10px;
+}
+.navbar-brand {
+    font-weight: bold;
+    font-size: 1.4em;
+}
+.navbar-toggler {
+    display: none;
+    border: none;
+    background: none;
+    font-size: 1.5em;
+}
+.navbar-collapse {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+.navbar-nav {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+.navbar-nav .nav-item {
+    background: #e5e5e5;
+    border:none;
+    margin: 10px 10px;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #000000;
+    cursor: pointer;
+}
+
+.nav-item:hover {
+    background-color: #dedede;
+}
+
+.navbar-nav .nav-link {
+    text-decoration: none;
+    color: #000;
+    font-size: 1.1em;
+    transition: color 0.3s;
+}
+.navbar-nav .nav-link:hover {
+    color: #14213d;
+}
+.search-form {
+    display: flex;
+}
+.search-form input {
+    padding: 5px;
+    border: 1px solid #e5e5e5;
+    border-radius: 3px 0 0 3px;
+    outline: none;
+}
+.search-form button {
+    padding: 5px 10px;
+    border: 1px solid #14213d;
+    background-color: #14213d;
+    color: #fff;
+    border-radius: 0 3px 3px 0;
+    cursor: pointer;
+    outline: none;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    transition: all ease;
+}
