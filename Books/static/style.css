@@ -178,7 +178,7 @@ body {
 }
 .submit-btn:hover {
     background-color: #e5e5e500;
-    border: #000 solid 2px;
+    border: #ffffff solid 2px;
     color: #ffffff;
     cursor: pointer;
 }
@@ -247,6 +247,7 @@ body {
     margin: 10px 0;
     text-align: center;
     box-sizing: border-box;
+    border-radius: 5px;
 }
 
 .message {
