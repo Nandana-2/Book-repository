@@ -30,19 +30,15 @@ def delete_book(request, book_id):
 @login_required(login_url='login_user')
 @user_passes_test(is_superuser)
 def add_book(request):
-    submitted = False
 
     if request.method == "POST":
         form = BookForm(request.POST, request.FILES)
         if form.is_valid():
             form.save()
-            return HttpResponseRedirect('/?submitted=True')
+            return HttpResponseRedirect('/')
     else:
         form = BookForm()
-        if 'submitted' in request.GET:
-            submitted = True
-
-    return render(request, 'add_book.html', {'form': form, 'submitted': submitted})
+    return render(request, 'add_book.html', {'form': form, })
 
 @login_required(login_url='login_user')
 def index(request):

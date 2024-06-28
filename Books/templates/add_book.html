@@ -27,17 +27,12 @@
     <div class="container">
     <h1 class="heading">Add Book to Repository</h1>
     <br/><br/>
-    {% if submitted %}
-        <div style="text-align: center; color: green;">
-            Your Book was saved to Repository
-        </div>
-    {% else %}
         <form method="POST" action="" enctype="multipart/form-data">
-            {% csrf_token %}
-            {{ form.as_p }}
-            <input type="submit" value="Submit" class = "submit-btn">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit" value="Submit" class = "submit-btn">
         </form>
-    {% endif %}
+
 </div>
 </body>
 </html>
